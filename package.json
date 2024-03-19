@@ -1,0 +1,30 @@
+{
+  "name": "w2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src",
+    "format": "prettier src --write"
+  },
+  "devDependencies": {
+    "@types/three": "^0.161.2",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.2",
+    "vite-plugin-glsl": "^1.2.1"
+  },
+  "dependencies": {
+    "lil-gui": "^0.19.1",
+    "the-new-css-reset": "^1.11.2",
+    "three": "^0.161.0",
+    "typescript-event-target": "^1.1.0"
+  }
+}
