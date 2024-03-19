@@ -21,7 +21,12 @@ export class Art {
       uniforms: {
         uTime: { value: 0 },
         uLifeGame: { value: this.lifeGame.texture },
-        uResolution: { value: new THREE.Vector2(sizes.width, sizes.height) },
+        uResolution: {
+          value: new THREE.Vector2(
+            sizes.width * sizes.pixelRatio,
+            sizes.height * sizes.pixelRatio,
+          ),
+        },
       },
       vertexShader,
       fragmentShader,
@@ -46,8 +51,8 @@ export class Art {
 
   public resize() {
     this.mesh.material.uniforms.uResolution.value.set(
-      sizes.width,
-      sizes.height,
+      sizes.width * sizes.pixelRatio,
+      sizes.height * sizes.pixelRatio,
     );
   }
 

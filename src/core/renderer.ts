@@ -29,7 +29,12 @@ class Renderer {
       uniforms: {
         tDiffuse: { value: null },
         opacity: { value: 1.0 },
-        uResolution: { value: new THREE.Vector2(sizes.width, sizes.height) },
+        uResolution: {
+          value: new THREE.Vector2(
+            sizes.width * sizes.pixelRatio,
+            sizes.height * sizes.pixelRatio,
+          ),
+        },
       },
       vertexShader,
       fragmentShader,
@@ -49,7 +54,10 @@ class Renderer {
     this.renderer.setSize(sizes.width, sizes.height);
     this.renderer.setPixelRatio(sizes.pixelRatio);
 
-    this.sobelPass.uniforms.uResolution.value.set(sizes.width, sizes.height);
+    this.sobelPass.uniforms.uResolution.value.set(
+      sizes.width * sizes.pixelRatio,
+      sizes.height * sizes.pixelRatio,
+    );
 
     this.composer.setSize(sizes.width, sizes.height);
   }
